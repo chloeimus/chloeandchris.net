@@ -1,10 +1,10 @@
 # chloeandchris.net
 
-Chloe &amp; Chris's wedding website. A single static page in the spirit of [chloeimus.com](http://chloeimus.com/): minimal, fast, and mobile-friendly.
+Wedding site! Minimal, fast, mobile-friendly, single static page 
 
 ## Editing
 
-All content lives in `index.html`. Sections marked `[ ... ]` (greyed out) are placeholders — replace the text inside them. No build step, no dependencies.
+All content lives in `index.html`. Sections marked `[ ... ]` (greyed out) are placeholders to replace text w actual info
 
 ## Hosting
 
