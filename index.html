@@ -6,9 +6,6 @@
   <title>Chloe &amp; Chris</title>
   <meta name="description" content="Chloe and Chris are getting married — June 26, 2027, Graylyn Estate, Winston-Salem, NC.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤍</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Color-cycle palette (edit these hexes anytime) */
@@ -22,40 +19,34 @@
     }
 
     * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+    html, body { margin: 0; padding: 0; }
 
     body {
-      font-family: "Pangolin", "Comic Sans MS", cursive, sans-serif;
+      font-family: Courier, "Courier New", monospace;
       color: var(--ink);
       background: #ffffff;
       font-size: 12pt;
       line-height: 1.55;
     }
 
-    /* ---------- Left: fixed, color-cycling flower ---------- */
+    /* ---------- Left: fixed, left-justified color-cycling flower ---------- */
     .art {
       position: fixed;
       top: 0;
       left: 0;
-      width: 50vw;
       height: 100vh;
+      width: 58vh;
+      padding: 3vh 1.5vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 4vh 3vw;
-      background: #ffffff;
+      justify-content: flex-start;
     }
-
     .flower {
-      width: 100%;
       height: 100%;
+      width: 100%;
       background-color: var(--c3);
-      -webkit-mask: url("assets/flower-mask.png") center / contain no-repeat;
-              mask: url("assets/flower-mask.png") center / contain no-repeat;
+      -webkit-mask: url("assets/flower-mask.png") left center / contain no-repeat;
+              mask: url("assets/flower-mask.png") left center / contain no-repeat;
       animation: colorcycle 36s linear infinite;
     }
 
@@ -69,80 +60,83 @@
       100%   { background-color: var(--c1); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .flower { animation: none; }
+    /* Same cycle, applied to text color (links + heart) */
+    @keyframes colorcycle-text {
+      0%     { color: var(--c1); }
+      16.66% { color: var(--c2); }
+      33.33% { color: var(--c3); }
+      50%    { color: var(--c4); }
+      66.66% { color: var(--c5); }
+      83.33% { color: var(--c6); }
+      100%   { color: var(--c1); }
     }
 
-    /* ---------- Right: scrolling content ---------- */
+    /* ---------- Right: scrolling content, tight to the flower ---------- */
     .content {
-      margin-left: 50vw;
-      width: 50vw;
-      min-height: 100vh;
-      padding: 9vh 6vw 12vh;
+      margin-left: 60vh;
+      max-width: 560px;
+      padding: 7vh 5vw 12vh 0;
     }
-
-    .names {
-      font-size: 34pt;
-      line-height: 1.05;
-      margin: 0 0 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .where {
-      font-size: 13pt;
-      margin: 0 0 28px;
-      color: #555;
-    }
-
-    nav {
-      margin: 0 0 32px;
-      font-size: 12pt;
-    }
-    nav a {
-      color: var(--ink);
-      text-decoration: none;
-      margin-right: 14px;
-      border-bottom: 2px solid transparent;
-    }
-    nav a:hover { border-bottom-color: currentColor; }
 
     h2 {
       font-size: 20pt;
       font-weight: normal;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 36px 0 8px;
+      letter-spacing: 1px;
+      margin: 30px 0 8px;
     }
+    h2:first-of-type { margin-top: 0; }
 
     p { margin: 0 0 14px; }
+    ul { list-style: none; padding: 0; margin: 0 0 14px; }
+    li { margin: 0 0 8px; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 14px;
+    a {
+      color: var(--c3);
+      text-decoration: underline;
+      animation: colorcycle-text 36s linear infinite;
     }
-    li { margin: 0 0 10px; }
 
-    .intro strong { font-weight: normal; background: #fff2a8; padding: 0 2px; }
+    sup a { text-decoration: none; }
 
-    .sign { margin-top: 40px; font-size: 16pt; }
+    .cal { margin-top: 18px; }
 
-    /* ---------- Mobile: stack flower on top ---------- */
+    .footnote {
+      margin-top: 32px;
+      font-size: 11pt;
+      color: #555;
+    }
+
+    .heart {
+      display: inline-block;
+      margin-top: 36px;
+      font-size: 18pt;
+      color: var(--c3);
+      animation: colorcycle-text 36s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flower, a, .heart { animation: none; }
+    }
+
+    /* ---------- Mobile: stack the flower on top ---------- */
     @media (max-width: 820px) {
       .art {
         position: static;
         width: 100%;
-        height: 42vh;
-        padding: 3vh 6vw 1vh;
+        height: 40vh;
+        padding: 3vh 6vw 0;
+        justify-content: center;
+      }
+      .flower {
+        -webkit-mask-position: center;
+                mask-position: center;
       }
       .content {
         margin-left: 0;
-        width: 100%;
-        min-height: 0;
-        padding: 4vh 7vw 12vh;
+        max-width: none;
+        padding: 3vh 7vw 12vh;
       }
-      .names { font-size: 28pt; }
     }
   </style>
 </head>
@@ -153,42 +147,33 @@
   </div>
 
   <main class="content">
-    <h1 class="names">Chloe + Chris</h1>
-    <p class="where">June 26, 2027 &middot; Graylyn Estate &middot; Winston-Salem, North Carolina</p>
 
-    <nav>
-      <a href="#schedule">Schedule</a>
-      <a href="#travel">Travel</a>
-      <a href="#lodging">Lodging</a>
-      <a href="#kids">Kids</a>
-    </nav>
-
-    <div class="intro">
-      <p>Hi everyone!</p>
-      <p>We're getting married and you're invited! We'll be sending Save-the-Dates a bit later, but wanted to get the word out sooner than later and confirm a few things. <strong>Please read through and reply to Chloe and me with the following!</strong> (We're bolding this because the version of this email we sent to families didn't get any helpful responses lol.)</p>
-    </div>
-
-    <h2 id="schedule">Schedule</h2>
-    <p>The wedding will take place on June 26, 2027 at Graylyn Estate in Winston-Salem, North Carolina.</p>
-    <p>The weekend schedule will be:</p>
+    <h2>Schedule</h2>
+    <p>The wedding will take place on June 26, 2027 at Graylyn Estate in Winston-Salem, North Carolina. The weekend schedule will be:</p>
     <ul>
-      <li><strong>Thursday evening, the 24th:</strong> Welcome drinks in Winston-Salem</li>
-      <li><strong>Friday, the 25th:</strong> Celebration at Minglewood — Chloe's family farm (starting in the afternoon and continuing into the evening)</li>
-      <li><strong>Saturday, the 26th:</strong> Ceremony and reception at Graylyn</li>
-      <li><strong>Sunday, the 27th:</strong> Farewell brunch/breakfast in Winston-Salem</li>
+      <li>Thursday evening, the 24th: Welcome drinks in Winston-Salem</li>
+      <li>Friday, the 25th: Celebration at Minglewood — Chloe's family farm (afternoon into evening)</li>
+      <li>Saturday, the 26th: Ceremony and reception at Graylyn<sup><a href="#kids">*</a></sup></li>
+      <li>Sunday, the 27th: Farewell brunch/breakfast in Winston-Salem</li>
     </ul>
+    <p class="cal">Add to calendar:
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Chloe+%2B+Chris+Wedding+Weekend&amp;dates=20270624/20270628&amp;location=Graylyn+Estate%2C+Winston-Salem%2C+NC&amp;details=Thu+6%2F24%3A+Welcome+drinks+in+Winston-Salem.+Fri+6%2F25%3A+Celebration+at+Minglewood.+Sat+6%2F26%3A+Ceremony+%26+reception+at+Graylyn.+Sun+6%2F27%3A+Farewell+brunch." target="_blank" rel="noopener">Google</a> &middot;
+      <a href="https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&amp;rru=addevent&amp;subject=Chloe+%2B+Chris+Wedding+Weekend&amp;startdt=2027-06-24&amp;enddt=2027-06-28&amp;allday=true&amp;location=Graylyn+Estate%2C+Winston-Salem%2C+NC&amp;body=Thu+6%2F24%3A+Welcome+drinks+in+Winston-Salem.+Fri+6%2F25%3A+Celebration+at+Minglewood.+Sat+6%2F26%3A+Ceremony+%26+reception+at+Graylyn.+Sun+6%2F27%3A+Farewell+brunch." target="_blank" rel="noopener">Outlook</a> &middot;
+      <a href="assets/wedding.ics" download>iCal</a>
+    </p>
 
-    <h2 id="travel">Travel</h2>
-    <p>If you need to skip Thursday night, you'll likely want to arrive in Winston early enough on Friday to take advantage of the organized transport to get to the farm (about a 45-minute drive from Graylyn).</p>
+    <h2>Travel</h2>
+    <p>The nearest airport is Greensboro (GSO). Charlotte (CLT) is also an option, but a further drive. From GSO, a car or taxi to and from the city is pretty inexpensive.</p>
+    <p>Rental cars are an option too, but really only if you want to do things outside the scheduled events — we'll provide transportation for everything else.</p>
 
-    <h2 id="lodging">Lodging</h2>
-    <p>We'd love for as many of our guests to stay at Graylyn as possible, Thursday–Sunday. Having everyone together on-site will make the weekend feel especially festive and give us more opportunities to spend time together throughout the celebrations.</p>
+    <h2>Lodging</h2>
+    <p>We'd love for as many of our guests as possible to stay at <a href="https://www.graylyn.com/" target="_blank" rel="noopener">Graylyn Estate</a> Thursday–Sunday. Having everyone together on-site will make the weekend feel especially festive and give us more opportunities to spend time together throughout the celebrations.</p>
     <p>A pool, tennis court, walking/jogging paths, outdoor pond (with fishing poles!), bicycles, badminton, croquet, billiards, foosball, and more are all available on-site.</p>
 
-    <h2 id="kids">Kids</h2>
-    <p>As of right now, children under 16 won't be included in the ceremony or reception. Children are welcome to stay at Graylyn with their families throughout the weekend, and we're planning to explore childcare options for wedding events that don't include children. Please feel free to reach out with any questions about your family's specific situation — we're happy to chat!</p>
+    <p class="footnote" id="kids">* As of right now, children under 16 won't be included in the ceremony or reception. Children are welcome to stay at Graylyn with their families throughout the weekend, and we're planning to explore childcare options for wedding events that don't include children. Please feel free to reach out with any questions about your family's specific situation — we're happy to chat!</p>
 
-    <p class="sign">&lt;3</p>
+    <p class="heart">&lt;3</p>
+
   </main>
 
 </body>
