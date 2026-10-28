@@ -5,38 +5,29 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:[email protected]
-DTSTAMP:20261018T000000Z
-SUMMARY:Welcome Drinks — Chloe + Chris
+DTSTAMP:20261028T000000Z
+SUMMARY:Cocktail Hour — Chloe + Chris
 DTSTART;VALUE=DATE:20270624
 DTEND;VALUE=DATE:20270625
 LOCATION:Winston-Salem, NC
-DESCRIPTION:Welcome drinks in Winston-Salem (Thursday evening).
+DESCRIPTION:Cocktail hour in Winston-Salem (Thursday evening).
 END:VEVENT
 BEGIN:VEVENT
 UID:[email protected]
-DTSTAMP:20261018T000000Z
-SUMMARY:Celebration at Minglewood — Chloe + Chris
+DTSTAMP:20261028T000000Z
+SUMMARY:Minglewood — Chloe + Chris
 DTSTART;VALUE=DATE:20270625
 DTEND;VALUE=DATE:20270626
-LOCATION:Minglewood (Chloe's family farm), NC
-DESCRIPTION:Celebration at Minglewood, Chloe's family farm — afternoon into evening.
+LOCATION:Minglewood, NC
+DESCRIPTION:An afternoon and evening of music, art, dinner, and drinks at Minglewood. Transportation provided to and from Graylyn Estate.
 END:VEVENT
 BEGIN:VEVENT
 UID:[email protected]
-DTSTAMP:20261018T000000Z
+DTSTAMP:20261028T000000Z
 SUMMARY:Wedding Ceremony & Reception — Chloe + Chris
 DTSTART;VALUE=DATE:20270626
 DTEND;VALUE=DATE:20270627
 LOCATION:Graylyn Estate, Winston-Salem, NC
 DESCRIPTION:Ceremony and reception at Graylyn Estate.
-END:VEVENT
-BEGIN:VEVENT
-UID:[email protected]
-DTSTAMP:20261018T000000Z
-SUMMARY:Farewell Brunch — Chloe + Chris
-DTSTART;VALUE=DATE:20270627
-DTEND;VALUE=DATE:20270628
-LOCATION:Winston-Salem, NC
-DESCRIPTION:Farewell brunch/breakfast in Winston-Salem.
 END:VEVENT
 END:VCALENDAR
